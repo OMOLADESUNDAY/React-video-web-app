@@ -1,0 +1,117 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+:root {
+  --color-bg:rgba(0,0,0,0.85);
+  /* --color-bg: rgba(107, 111, 117, 0.466); */
+  --color-bg-variant: rgba(35, 37, 37, 0.6);
+  --color-primary:rgba(223, 165, 8, 0.671);
+  /* --color-primary:rgb(37, 3, 92); */
+  --color-secondary:rgb(34, 162, 194);
+  
+  --width-container-lg: 85%;
+  --width-container-md: 90%;
+  --width-container-sm:95%;
+  --transition:0.5s ease-in-out;
+  --margin-lg:2rem;
+  --margin-md:1.5rem;
+  --margin-sm:1.2rem;
+  --padding-lg: 2rem;
+  --padding-md: 1.5rem;
+  --padding-sm: 1rem;
+  --text-font-lg: 2rem;
+  --text-font-md: 1.5rem;
+  --text-font-sm: 1rem;
+  --text-color:#fff;
+  --text-black: #000;
+  --text-light:rgba(255,255,255,0.5)
+ 
+}
+::-webkit-scrollbar{
+  display: none;
+}
+.btn{
+  background:var(--color-primary);
+  display: inline-block;
+  padding: var(--padding-sm);
+  cursor: pointer;
+  text-align: center;
+  transition: var(--transition);
+  border-radius:1rem;
+  position: relative;
+  font-size: 1.3rem;
+}
+.btn-primary{
+  background: transparent;
+  border:1px solid var(--color-primary);
+}
+.btn:hover{
+  background: var(--color-secondary);
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  bottom: -0.3rem;
+  left: 10%;
+  background: var(--color-bg-variant);
+  width: 0%;
+  transition: var(--transition);
+}
+.btn:hover::after{
+  width: 10%;
+  margin: auto;
+  border: 1px solid var(--color-bg-variant);
+  padding: 0.5rem;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+  clip-path: polygon(0% 50%, 50% 0%, 100% 50%, 55% 50%, 55% 100%, 45% 100%, 45% 50%, 0% 50%);
+}
+
+body{
+  background-color: var(--color-bg);
+  color: var(--text-color);
+
+}
+.container{
+  width: var(--width-container-lg);
+  margin: 0 auto;
+}
+a{
+  text-decoration: none;
+  color: var(--text-color);
+}
+a:hover{
+  color: var(--text-black);
+}
+section h2,h5{
+  color: var(--color-primary);
+  text-align: center;
+}
+section h2{
+  font-size: 4rem;
+  font-weight:bolder;
+}
+
+img{
+  object-fit: cover;
+  width: 100%;
+}
+
+@media screen and (max-width:1024px) {
+  .container{
+    width: var(--width-container-md);
+    }
+  
+}
+@media screen and (max-width:600px) {
+  .container {
+    width: var(--width-container-sm);
+
+  }
+}
+
+

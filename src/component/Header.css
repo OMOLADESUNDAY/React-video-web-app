@@ -1,0 +1,59 @@
+.header__section{
+    background-size: cover;
+    background-position: center;
+    /* background-repeat: no-repeat;
+    background: linear; */
+    object-fit: cover;
+    height: 85vh;
+    transition: var(--transition);
+    transition: 0.5s ease-out;
+    animation: animate 300s infinite normal;
+    /* animation-direction */
+}
+@keyframes animate{
+    0%,25%{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+        url('../image/geoffrey-moffett-TFRezw7pQwI-unsplash.jpg');
+        
+    }
+    25%,50%{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+        url('../image/jeremy-yap-J39X2xX_8CQ-unsplash.jpg');
+        background-position: top;    
+        
+    }
+    50%,75%{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+        url('../image/krists-luhaers-AtPWnYNDJnM-unsplash.jpg');
+        
+    }
+    75%,100%{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+        url('../image/felipe-bustillo-4VDRCoNuvE0-unsplash.jpg');
+        
+    }
+    100%,0%{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+        url('../image/felix-mooneeram-evlkOfkQ5rE-unsplash.jpg');
+            
+    }
+}
+.header__container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.header__content{
+    width: 100%;
+    position: absolute;
+    margin: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+.header__content h2,h5{
+    color: var(--text-color);
+    
+}

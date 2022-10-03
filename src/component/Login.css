@@ -1,0 +1,54 @@
+.login__container{
+    display: flex;
+    /* border: solid; */
+    min-height:80vh;
+}
+.login__heading{
+    margin: 2rem 0;
+}
+.hyyy{
+    width: 50%;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.form{
+    width: 60%;
+    height: 50%;
+    box-shadow: 3px 3px 3px 3px var(--text-black);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.login__input{
+  width: 80%;
+  background: var(--color-primary);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+}
+.login__submit{
+    padding: 0.5rem 1rem;
+    outline: none;
+    border: none;
+}
+.login__img_article{
+   width: 50%;
+   /* text-align: center; */
+   /* border: solid; */
+   position: relative;
+}
+.login__img_article img{
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
