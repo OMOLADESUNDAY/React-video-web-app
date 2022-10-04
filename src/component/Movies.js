@@ -18,7 +18,6 @@ const Movies = () => {
   const searchHandler=(e)=>{
     e.preventDefault()
     setSearchMovie(searchRef.current.value)
-    console.log(searchRef.current.value)
     e.target.reset()
   }
   
@@ -27,7 +26,7 @@ const Movies = () => {
     const options = {
 	      method: 'GET',
 	      headers: {
-          'X-RapidAPI-Key': '6baac5ca8emsh269cbae7243564cp19f6a4jsn5937198bb705',//isabellaalisha260@gmail.com rapid api key
+         'X-RapidAPI-Key': '6baac5ca8emsh269cbae7243564cp19f6a4jsn5937198bb705',//isabellaalisha260@gmail.com rapid api key
 		    // 'X-RapidAPI-Key': '7a1576e1d2mshff79dcb3cbb9727p1db395jsnda614f582d9b',//sundayomoladee11@gmail.com rapid api key
 		    'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
 	      }
@@ -36,10 +35,11 @@ const Movies = () => {
       const response= await fetch(RapidApiUrl,options)
       const movies= await response.json()
       setLoading(false)
-      setmovies(movies.d)
-      console.log(movies.d)  
+      setmovies(movies.d)  
     } catch (error) {
       setError(true)
+      console.log(error)
+      
     }
     
   }
@@ -50,7 +50,11 @@ const Movies = () => {
 
   if (loading) {
       return(
-        <h2>Loading</h2>
+        <div className='loading__center'>
+          <div className="ring"></div>
+          <span className="loading">Loading</span>
+        </div>
+        
       )
   }
   else if(error){
