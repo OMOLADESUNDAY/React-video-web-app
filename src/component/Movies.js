@@ -12,8 +12,17 @@ const Movies = () => {
   const [loading, setLoading]=useState(true)
   const [movies, setmovies]= useState([])
   const [error,setError]=useState(false)
-  const searchRef=useRef()
-
+  const [searchMovie,setSearchMovie]=useState('')
+  const searchRef=useRef('')
+  
+  const searchHandler=(e)=>{
+    e.preventDefault()
+    setSearchMovie(searchRef.current.value)
+    console.log(searchRef.current.value)
+    e.target.reset()
+  }
+  
+  const RapidApiUrl=`https://imdb8.p.rapidapi.com/auto-complete?q=${searchMovie || 'avengers'}`
   const getMovies= async()=>{
     const options = {
 	      method: 'GET',
@@ -24,7 +33,7 @@ const Movies = () => {
 	      }
     };
     try {
-        const response= await fetch('https://imdb8.p.rapidapi.com/auto-complete?q=man',options)
+      const response= await fetch(RapidApiUrl,options)
       const movies= await response.json()
       setLoading(false)
       setmovies(movies.d)
@@ -36,7 +45,8 @@ const Movies = () => {
   }
   useEffect(()=>{
     getMovies()
-  },[])
+  },[searchMovie])
+
 
   if (loading) {
       return(
@@ -52,11 +62,11 @@ const Movies = () => {
       return (
     <section>
         <h2 className='movie__heading'>Watch movies</h2>
-        <form action="">
+        <form action="" onSubmit={searchHandler}>
         <label htmlFor="search">
         </label>
         <input type="search" ref={searchRef} name="search" id="search" />
-        <button>search</button></form>
+        <button type='submit'>search</button></form>
        
         <div className='container movie__container'>
         {movies.map((movie)=>{

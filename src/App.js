@@ -11,6 +11,11 @@ function App() {
   return (
     <div className="">
     
+    {
+      
+      // <Login/>
+  }
+  
       <Navbar/>
       <Routes>
         <Route path='/' element={<Header/>}/>
@@ -18,7 +23,11 @@ function App() {
         <Route path='/movies' element={<Movies/>}/>
         <Route path='/newsletter' element={<Newsletter/>}/>
       </Routes>
+
+  
+    
       <Footer/>
+    
     </div>
   );
 }
