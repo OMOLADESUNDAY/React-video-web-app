@@ -4,7 +4,7 @@ import "./Movies.css";
 import defaultImg from '../image/jon-tyson-A-obUh61bKw-unsplash.jpg';
 import PropTypes from 'prop-types'
 import { useRef } from 'react';
-
+import {FcSearch} from 'react-icons/fc'
 // const OMDbapiUrl='https://imdb8.p.rapidapi.com/auto-complete?q=game%20of%20thr'
 
 
@@ -20,22 +20,16 @@ const Movies = () => {
     setSearchMovie(searchRef.current.value)
     e.target.reset()
   }
-  
-  const RapidApiUrl=`https://imdb8.p.rapidapi.com/auto-complete?q=${searchMovie || 'avengers'}`
+  const initalLoadingArray=['man','woman','guy','trending','book','game','car','aqua']
+  const randomDataFromInitialLoadingArray=initalLoadingArray[Math.floor(Math.random()*initalLoadingArray.length)]
+  const RapidApiUrl=`http://www.omdbapi.com/?i=tt3896198&apikey=ae13f309&s=${searchMovie || randomDataFromInitialLoadingArray}`
   const getMovies= async()=>{
-    const options = {
-	      method: 'GET',
-	      headers: {
-         'X-RapidAPI-Key': '6baac5ca8emsh269cbae7243564cp19f6a4jsn5937198bb705',//isabellaalisha260@gmail.com rapid api key
-		    // 'X-RapidAPI-Key': '7a1576e1d2mshff79dcb3cbb9727p1db395jsnda614f582d9b',//sundayomoladee11@gmail.com rapid api key
-		    'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
-	      }
-    };
     try {
-      const response= await fetch(RapidApiUrl,options)
+      const response= await fetch(RapidApiUrl)
       const movies= await response.json()
       setLoading(false)
-      setmovies(movies.d)  
+      setmovies(movies.Search)  
+      console.log(movies.Search)
     } catch (error) {
       setError(true)
       console.log(error)
@@ -66,20 +60,24 @@ const Movies = () => {
       return (
     <section>
         <h2 className='movie__heading'>Watch movies</h2>
-        <form action="" onSubmit={searchHandler}>
+        <form className='search__form' action="" onSubmit={searchHandler}>
         <label htmlFor="search">
         </label>
-        <input type="search" ref={searchRef} name="search" id="search" />
-        <button type='submit'>search</button></form>
+        <div className='searchandicon__container'>
+          <input type="search" ref={searchRef} name="search" id="search" />
+          <button type='submit' className='search__btn'> <FcSearch className='movie__search_icon'/> </button>
+        </div>
+        
+        </form>
        
         <div className='container movie__container'>
         {movies.map((movie)=>{
-          const imgUrl= movie.i && movie.i.imageUrl 
+          const imgUrl=movie.Poster 
           return(
-            <article className='movie__item' key={movie.id}>
-              <img src={imgUrl|| defaultImg} alt="" className='movies__image'/>
-                <p className='movies__title'>{movie.l}</p>
-                
+            <article className='movie__item' key={movie.imdbID}>
+              <img src={imgUrl ==='N/A' ? defaultImg : imgUrl} alt="" className='movies__image'/>
+                <small>{movie.Year}</small>
+                <p className='movies__title'>{movie.Title}</p>
             </article>
           )
         })}
@@ -92,13 +90,12 @@ const Movies = () => {
         
   }
   Movies.propTypes={
-    image:PropTypes.string.isRequired,
-    title:PropTypes.string.isRequired,
-    id:PropTypes.string.isRequired,
+    Poster:PropTypes.string.isRequired,
+    Title:PropTypes.string.isRequired,
+    
   }
   Movies.defaultProps={
-    title:"missing title",
-    id:'jkihtf',
-    image:defaultImg
+    Title:"missing title",
+    Poster:defaultImg
   }
 export default Movies
