@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react'
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { logindesigndata } from '../data/moviesData'
@@ -6,16 +7,20 @@ import './Login.css'
 const Login = () => {
   const usernameRef=useRef('')
   const passwordRef=useRef('')
-
+  const [personDetails,setPersonDetails]=useState({password:'',username:''})
+  const [LoginDetails ,setLoginDetails]=useState([])
   const loginSubmitHandler=(e)=>{
     e.preventDefault()
-    console.log(usernameRef.current.value)
-    console.log(passwordRef.current.value)
+    const newPerson={...personDetails, password:passwordRef.current.value, username:usernameRef.current.value}
+    setLoginDetails([...LoginDetails, newPerson])
+    setPersonDetails({password:'',username:''})
     e.target.reset()
+    window.location='/'
   }
   return (
     <section className='container'>
-        <h2 className='login__heading'>Login</h2>
+    {console.log(LoginDetails)}
+    <h2 className='login__heading'>Login</h2>
         <div className='login__container'>
         <div className='hyyy'>
         <form className='form' onSubmit={loginSubmitHandler}>
