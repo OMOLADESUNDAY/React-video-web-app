@@ -1,22 +1,20 @@
 .login__container{
     display: flex;
-    /* border: solid; */
-    min-height:80vh;
+    min-height:60vh;
 }
 .login__heading{
-    margin: 2rem 0;
+    margin: 1rem 0;
 }
 .hyyy{
-    width: 50%;
-    
+    width: 50%;    
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
 }
 .form{
-    width: 60%;
-    height: 50%;
+    width: 90%;
+    min-height: 50vh;
     box-shadow: 3px 3px 3px 3px var(--text-black);
     border-radius: 1rem;
     display: flex;
@@ -27,7 +25,7 @@
 }
 
 .login__input{
-  width: 80%;
+  width: 60%;
   background: var(--color-primary);
   padding: 0.5rem;
   border-radius: 0.5rem;
@@ -41,8 +39,6 @@
 }
 .login__img_article{
    width: 50%;
-   /* text-align: center; */
-   /* border: solid; */
    position: relative;
 }
 .login__img_article img{
@@ -51,4 +47,23 @@
     top: 50%;
     transform: translateY(-50%);
 
+}
+@media screen and (max-width:768px) {
+    .login__img_article{
+        display: none;
+    }
+    .login__container{
+        align-items: center;
+        justify-content: center;
+        background-size: cover;
+        background-position: center;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),url('../image/removed.png');
+    }   
+    .form{
+        width: 100%;
+    }
+    .hyyy{
+        width: 70%;
+    }
+    
 }
