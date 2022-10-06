@@ -19,10 +19,10 @@ const Footer = () => {
           <li className='links'>sundayomoladee11@gmail.com</li>
         </ul>
         <div className="lower__footer">
-          <a href="http://wa.me/07069258526" target='_blank'><FaWhatsapp className='whatsapp'/></a>
-          <a href="https://www.facebook.com/omolade.sunday.75" target='_blank'><FaFacebookMessenger className='facebook'/></a>
-          <a href="https://www.https://twitter.com/Omolade_Sunday1" target='_blank'><FaTwitter className='twitter'/></a>
-          <a href="https://www.linkedin.com/in/sunday-omolade-6b6a69227" target='_blank'><BsLinkedin className='linkedin'/></a>
+          <a href="http://wa.me/07069258526" target='_blank' rel='noreferrer'><FaWhatsapp className='whatsapp'/></a>
+          <a href="https://www.facebook.com/omolade.sunday.75" target='_blank' rel='noreferrer'><FaFacebookMessenger className='facebook'/></a>
+          <a href="https://www.https://twitter.com/Omolade_Sunday1" target='_blank' rel='noreferrer'><FaTwitter className='twitter'/></a>
+          <a href="https://www.linkedin.com/in/sunday-omolade-6b6a69227" target='_blank' rel='noreferrer'><BsLinkedin className='linkedin'/></a>
         </div>
     </div>
   )

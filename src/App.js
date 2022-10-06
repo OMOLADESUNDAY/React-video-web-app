@@ -1,6 +1,5 @@
 import Header from './component/Header';
 import Navbar from './component/Navbar';
-import User from './component/User';
 import Movies from './component/Movies';
 import Newsletter from './component/Newsletter'
 import Footer from './component/Footer'
