@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './CTA.css'
 const CTA = () => {
   return (
     <div className='Cta__container'>
-        <a href='' className='btn'>Watch Now</a>
-        <a href='' className='btn'>Subscribe</a>
+        <Link to='/movies' className='btn'>Watch Now</Link>
+        <Link to='/newsletter' className='btn'>Subscribe</Link>
     </div>
   )
 }
