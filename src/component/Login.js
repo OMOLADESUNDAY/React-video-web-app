@@ -15,7 +15,7 @@ const Login = () => {
     setLoginDetails([...LoginDetails, newPerson])
     setPersonDetails({password:'',username:''})
     e.target.reset()
-    window.location='/'
+    window.location='/';
   }
   return (
     <section className='container'>
@@ -25,9 +25,9 @@ const Login = () => {
         <div className='hyyy'>
         <form className='form' onSubmit={loginSubmitHandler}>
                 <h5>username</h5>
-                <input type="text" name="username" ref={usernameRef} className='login__input'/>
+                <input type="text" name="username" ref={usernameRef} className='login__input' required/>
                 <h5>password</h5>
-                <input type='password' ref={passwordRef} name='password' className='login__input'/>
+                <input type='password' ref={passwordRef} name='password' className='login__input' required/>
                 <button className='btn login__submit'>Login</button>
                 <p>Create Accout <Link to='/register' className='login__register_redirect'>sign up</Link></p>
                 

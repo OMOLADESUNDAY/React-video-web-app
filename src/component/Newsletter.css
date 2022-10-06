@@ -1,0 +1,40 @@
+.newsletter__container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    min-height: 60vh;
+   position: relative;
+   
+   
+}
+.newsletter__content_container > h2{
+    margin: 2rem 0;
+  font-size: 2rem;
+}
+.newsletter__content_container{
+    height: 40vh;
+    width: 60%;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 2px 3px 3px 3px black;
+
+}
+.subscribe__form input{
+    height: 40px;
+    background-color: var(--color-primary);
+    font-size: 1rem;
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    margin: 2rem 1rem;
+    padding: 0 1rem;
+    color: black;
+}
+.subscribe{
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
