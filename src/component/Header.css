@@ -1,14 +1,12 @@
 .header__section{
     background-size: cover;
     background-position: center;
-    /* background-repeat: no-repeat;
-    background: linear; */
     object-fit: cover;
     height: 85vh;
     transition: var(--transition);
     transition: 0.5s ease-out;
     animation: animate 300s infinite normal;
-    /* animation-direction */
+    
 }
 @keyframes animate{
     0%,25%{
