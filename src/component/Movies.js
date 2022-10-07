@@ -22,7 +22,7 @@ const Movies = () => {
   }
   const initalLoadingArray=['man','woman','guy','trending','book','game','car','aqua']
   const randomDataFromInitialLoadingArray=initalLoadingArray[Math.floor(Math.random()*initalLoadingArray.length)]
-  const RapidApiUrl=`http://www.omdbapi.com/?i=tt3896198&apikey=ae13f309&s=${searchMovie || randomDataFromInitialLoadingArray}`
+  const RapidApiUrl=`https://www.omdbapi.com/?i=tt3896198&apikey=ae13f309&s=${searchMovie || randomDataFromInitialLoadingArray}`
   const getMovies= async()=>{
     try {
       const response= await fetch(RapidApiUrl)
@@ -39,7 +39,7 @@ const Movies = () => {
   }
   useEffect(()=>{
     getMovies()
-    
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[searchMovie])
 
 
