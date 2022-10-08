@@ -20,7 +20,8 @@ const Movies = () => {
     setSearchMovie(searchRef.current.value)
     e.target.reset()
   }
-  const initalLoadingArray=['man','woman','guy','trending','book','game','car','aqua']
+  const initalLoadingArray=['man','guy','jungle book','game','aqua','avengers','thor','green lantern','wolverine',
+  'mortal kombat','x-men','jack','sonic']
   const randomDataFromInitialLoadingArray=initalLoadingArray[Math.floor(Math.random()*initalLoadingArray.length)]
   const RapidApiUrl=`https://www.omdbapi.com/?i=tt3896198&apikey=ae13f309&s=${searchMovie || randomDataFromInitialLoadingArray}`
   const getMovies= async()=>{
