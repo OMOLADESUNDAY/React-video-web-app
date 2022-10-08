@@ -38,3 +38,9 @@
     padding: 0.5rem;
     border-radius: 1rem;
 }
+@media screen and (max-width:768px){
+    .newsletter__content_container{
+        top: 30%;
+        width: 85%;
+    }   
+}
