@@ -10,4 +10,4 @@ npm install
 
 check it out
 
-https://profound-bubblegum-1db428.netlify.app
+https://react-moviedetails.netlify.app
