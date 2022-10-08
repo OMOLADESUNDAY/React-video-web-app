@@ -14,6 +14,7 @@ const Login = () => {
     const newPerson={...personDetails, password:passwordRef.current.value, username:usernameRef.current.value}
     setLoginDetails([...LoginDetails, newPerson])
     setPersonDetails({password:'',username:''})
+    console.log(`${usernameRef.current.value} just join the show`)
     e.target.reset()
     window.location='/';
   }
